@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+:root {
+    --color-black: #222831;
+    --color-black2: #282d35;
+    --color-grey: #393E46;
+    --color-grey2: #b7b8b9;
+    --color-grey3: #6c6d70;
+    --color-grey4: #59595c;
+    --color-teal: #00ADB5;
+    --color-teal-hover: #02767c;
+    --color-white2: #dddada;
+    --color-white: #f5f5f5;
+    --color-table-even: #dbdada;
+    --color-red: #dc3545;
+    --color-red-hover: #ac2b38;
+    --color-green: #28a745; 
+    --color-green-hover: #1e7c34;
+
+    --font-logo: "Newsreader", serif;
+    --font-title: "Poppins", sans-serif;
+    --font-text: 'Inter', sans-serif;
+
+}
+
+html {
+    --background-primary: var(--color-white);      
+    --background-secondary: var(--color-white2);       
+    --background-image: linear-gradient(127deg,rgba(0, 173, 181, 1) 0%, rgba(0, 238, 255, 1) 100%);
+    --background-input: var(--color-white);
+    --background-table: var(--color-table-even);
+    ;
+    --color-table-hover: #b0d5d8;
+
+    --text-primary: var(--color-black);           
+    --text-secondary: var(--color-grey);
+    --text-table: var(--color-grey4);         
+    --text-on-accent: var(--color-white);          /* Texto sobre botões coloridos */
+    
+    --border-table: var(--color-grey3);
+    --border-color: var(--color-white2);
+    --border-color-input: var(--color-grey2);
+    --border-color-input-focus: var(--color-grey3);
+    --box-shadow: 0 2px 10px rgba(46, 46, 46, 0.2);
+    scrollbar-color: var(--text-primary) var(--background-primary);
+}
+
+html.dark-mode {
+    --background-primary: var(--color-black);      
+    --background-secondary: var(--color-black2);       
+    --background-image: linear-gradient(167deg,rgba(0, 107, 112, 1) 0%, rgba(0, 173, 181, 1) 100%);
+    --background-input: var(--color-black2);
+    --background-table: var(--color-grey);
+    --color-table-hover: #0f3642;
+
+    --text-primary: var(--color-white);           
+    --text-secondary: var(--color-grey2);
+    --text-table: var(--color-grey3);         
+    --text-on-accent: var(--color-white);          /* Texto sobre botões coloridos */
+    
+    --border-table: var(--color-grey3);
+    --border-color: var(--color-grey);
+    --border-color-input: var(--color-black2);
+
+    --box-shadow: 0 2px 10px rgba(121, 121, 121, 0.2);
+}
+
+body{
+    font-family: var(--font-text);
+    background-color: var(--background-primary);
+    margin: 0;
+    display: flex;
+    box-sizing: border-box;
+    min-height: 100vh;
+    
+}
+
+main {
+    padding: 15px 20px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+.active {
+    cursor:default;
+}
+
+/*tirar o negócio do lado do input de numero*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-secondary);
+}
+a:hover{
+    color: var(--text-primary);
+}
+body, button, input, textarea, a, section, header, nav, dialog, #search, .card, .header_container, #logo, td, th, h3 , tr, .login_container, .logo, .profile-container, .profile-container *{
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+@media print {
+    .status-active, .status-inactive {
+        font-weight: 500 !important;
+        color: var(--color-black) !important;
+    }
+    thead th{
+        font-weight: 500 !important;
+        color: var(--color-black) !important;
+        background-color: #6c6d70 !important;
+    }
+    #sidebar, .user_info, header, .header_container, #btn_print, .theme-button, #search, button, .page_container{
+        display: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    main {
+        height: min-content !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    body * {
+        visibility: hidden !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        --text-primary: var(--color-black) !important;
+    }
+
+    .table, .table * {
+        visibility: visible !important;
+    }
+
+    .table_container {
+        box-shadow: none !important;
+        border: none !important;
+        height: min-content !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .table {
+        width: 100% !important; 
+        height: min-content!important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    td, th {
+        border: none !important;
+        border: 1px solid #6c6d70 !important;
+    }
+}
