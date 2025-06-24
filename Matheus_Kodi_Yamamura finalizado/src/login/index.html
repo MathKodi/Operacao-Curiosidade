@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../shared/css/login.css">
+    <link rel="stylesheet" href="../shared/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Operação Curiosidade</title>
+</head>
+<body>
+    <script src="../shared/js/theme.js"></script>
+    <div class="login_page">
+        <div class="login_container">
+            <button id="theme-toggle" class="theme-button">
+                <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>  
+            </button>
+        <form autocomplete="off" id="login_form">
+            <div class="logo">
+                <h2>OC</h2>
+            </div>
+            <div class="input_group">
+                <label for="iemail">Email</label>
+                <input type="text" name="iemail" id="iemail" placeholder="Digite seu email">
+                <span class="error_message" id="emailError"></span>
+            </div>
+            <div class="input_group">
+                <label for="ipassword">Senha</label>
+                <input type="password" name="ipassword" id="ipassword" placeholder="Digite sua senha">
+                <span class="error_message" id="passwordError"></span>
+            </div>
+            
+            <button type="submit" value="login">Entrar</button>
+            <div class="links">
+                <p>Não possui conta?<a href="../register/register.html">Crie Aqui</a></p>
+            </div>
+            <span class="success_message" id="successMessage"></span>
+        </form>
+    </div>
+    </div>
+    <script src="login.js" defer></script>
+    <script src="../shared/js/auth.js"></script>
+    <script src="../shared/js/helpers.js"></script>
+    <script src="../shared/js/config.js"></script>
+    <script>
+        checkIfLoggedIn();
+    </script>
+</body>
+</html>

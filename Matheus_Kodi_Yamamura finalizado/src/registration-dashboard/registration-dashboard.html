@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../shared/css/styles.css">
+    <link rel="stylesheet" href="../shared/css/sidebar.css">
+    <link rel="stylesheet" href="../shared/css/dashboard.css">
+    <link rel="stylesheet" href="../shared/css/header.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Operação Curiosidade</title>
+</head>
+<body>
+    <script src="../shared/js/theme.js"></script>
+    <nav id="sidebar">
+        <div id="logo">
+            <span>OC</span><p> Operação Curiosidade</p>
+        </div>
+        <ul id="side_items">
+            <li class="side-item">
+                <a href="../dashboard/dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="item-description">Home</span>
+                </a>
+            </li>
+            <li class="side-item active">
+                <a href="../registration-dashboard/registration-dashboard.html">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span class="item-description">Cadastro</span>
+                </a>
+            </li>
+            <li class="side-item">
+                <a href="../reports-dashboard/reports-dashboard.html">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span class="item-description">Relatórios</span>
+                </a>
+            </li>
+            <li class="side-item">
+                <a href="../profile/profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="item-description">Perfil</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <header>
+            <div class="header_container">
+                <input type="search" name="search" id="search" placeholder="Pesquisar...">
+                <div class="user_info">
+                    <button id="theme-toggle" class="theme-button">
+                        <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>  
+                    </button>
+                    <span id="avatar"></span>
+                    <a href="../profile/profile.html">
+                        <span id="username"></span>
+                    </a>
+                    <button id="btn_logout">SAIR</button>
+                </div>
+            </div>
+        </header>
+        <section class="table">
+           <div class="table_container">
+                <div class="table_head">
+                    <h3 class="table_title">Cadastros</h3>
+                    <button id="btn_register" data-modal="modal-register" class="open_modal">NOVO CADASTRO</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="col-name column_sort" data-sort-key="name">Nome</th>
+                            <th class="col-email column_sort" data-sort-key="email">Email</th>
+                            <th class="col-status column_sort" data-sort-key="active">Status</th>
+                            <th class="col-actions actions_column">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table_body">
+                    </tbody>
+                </table>
+                <div id="page_control" class="page_container"></div>
+        </div> 
+        </section>
+        
+        <dialog id="modal-register">
+            <form autocomplete="off" id="registerClient_form">
+                <div class="modal_header">
+                    <h1 class="modal_title">Novo Cadastro</h1>
+                    <button type="button" class="close_modal" data-modal="modal-register">
+                        <i id="icon_close" class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal_body">
+                    <h2 class="step_title">
+                        1º Fatos e Dados
+                    </h2>
+                    <div class="input_checkbox">
+                        <label for="iactive">
+                           <input type="checkbox" name="iactive" id="iactive" value="active"> Ativo 
+                        </label>
+                    </div>
+                    
+                    <div class="input_group">
+                        <label for="iname">Nome*</label>
+                        <input type="text" name="iname" id="iname" placeholder="Digite o nome do cliente">
+                        <span class="error_message" id="nameError"></span>
+                    </div>
+                    <div class="row">
+                        <div class="input_group email">
+                            <label for="iemail">Email*</label>
+                            <input type="text" name="iemail" id="iemail" placeholder="Digite o email do cliente">
+                            <span class="error_message" id="emailError"></span>
+                        </div>
+                        <div class="input_group age">
+                            <label for="iage">Idade</label>
+                            <input type="number" name="iage" id="iage" placeholder="00">
+                            <span class="error_message" id="ageError"></span>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="input_group">
+                        <label for="iaddress">Endereço</label>
+                        <input type="text" name="iaddress" id="iaddress" placeholder="Digite o endereço do cliente">
+                    </div>
+                    <div class="input_group">
+                        <label for="iinfo">Outras Informações</label>
+                        <textarea rows="3" name="iinfo" id="iinfo" placeholder="Digite outras informações do cliente"></textarea>
+                    </div>
+                    <h2 class="step_title">
+                        2º Interesses
+                    </h2>
+                    <div class="input_group">
+                        <textarea rows="5" id="iinterests" name="iinterests"  placeholder="Digite os interesses do cliente"></textarea>
+                    </div>
+                    <h2 class="step_title">
+                        3º Sentimentos
+                    </h2>
+                    <div class="input_group">
+                        <textarea rows="5" id="ifeelings" name="ifeelings"  placeholder="Digite os sentimentos do cliente"></textarea>
+                    </div>
+                    <h2 class="step_title">
+                        4º Valores
+                    </h2>
+                    <div class="input_group">
+                        <textarea rows="5" id="ivalues" name="ivalues"  placeholder="Digite sua mensagem aqui..."></textarea>
+                    </div>
+                    <div class="center">
+                        <button id="btn_save" type="submit" value="cadastrar">GRAVAR</button>
+                    </div>
+                </div>
+            </form>
+        </dialog>
+    </main>
+    <script src="../shared/js/auth.js"></script>
+    <script src="../shared/js/search.js"></script>
+    <script src="../shared/js/log.js"></script>
+    <script src="../shared/js/helpers.js"></script>
+    <script src="registration-dashboard.js"></script>
+    <script src="modal.js"></script>
+    <script src="../shared/js/table.js"></script>
+    <script>
+        renderTable({withActions: true})
+        restrictPage()
+        configLogout()
+    </script>
+</body>
+</html>
