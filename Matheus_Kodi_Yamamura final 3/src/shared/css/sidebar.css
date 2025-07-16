@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-primary);
+    min-height: 100vh;
+    box-shadow: var(--box-shadow);
+    border-radius: 20px 0px 0px 0px;
+    margin-left: 4px;
+    padding: 20px;
+    position: relative;
+}
+
+#logo {
+    display: flex;
+    padding: 5px 20px;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-title);
+    background-image: var(--background-image);
+    color: var(--color-white);
+}
+
+#logo span{
+    font-weight: 800;
+    font-size: 2.25rem;
+}
+
+#logo p {
+    margin-left: 15px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+#side_items {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.side-item {
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.side-item.active {
+    background-color: var(--color-teal);
+}
+.side-item.active a{
+    color: var(--color-white);
+}
+.side-item:hover:not(.active){
+    background-color: var(--background-secondary);
+}
+
+.side-item a{
+    padding: 14px;
+    text-decoration: none;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+}
+
+.side-item a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100px;
+        padding: 15px;
+    }
+    .side-item a{
+        gap: 10px;
+    }
+    .item-description {
+        font-size: 12px;
+    }
+    #logo p{
+        display: none;
+    }
+    #logo span{
+        font-weight: 800;
+        font-size: 1.75rem;
+    }
+    #logo {
+        padding: 5px 5px;
+    }
+}
+
+@media (max-width: 475px) {
+    #sidebar {
+        width: 35px;
+        padding: 10px;
+    }
+    #logo span{
+        font-weight: 800;
+        font-size: 1rem;
+    }
+    .item-description {
+        display: none;
+    }
+    .side-item{
+        padding: 5px;
+    }
+}
